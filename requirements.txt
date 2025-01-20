@@ -1,0 +1,9 @@
+pyyaml
+gensim
+pandas
+numpy
+datasets
+nltk
+tqdm
+scikit-learn
+matplotlib

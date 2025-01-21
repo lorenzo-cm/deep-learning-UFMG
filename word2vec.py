@@ -7,6 +7,11 @@ from dataset import build_corpus
 
 EXPERIMENT_NAME = sys.argv[1]
 
+if len(sys.argv) != 2:
+    print(f"usage: python3 word2vec.py NAME_OF_CONFIG")
+    print(f"You can specify the config and config name in config/config.yaml")
+    sys.exit(-1)
+
 config_yaml_path = f'config/config.yaml'
 
 with open(config_yaml_path, 'r') as file:

@@ -1,4 +1,5 @@
 import sys
+import os
 import yaml
 from gensim.models import Word2Vec
 
@@ -32,4 +33,5 @@ model = Word2Vec(
     callbacks=[TQDMProgress(config['epochs'])],
 )
 
+os.makedirs('models', exist_ok=True)
 model.save(f"models/{EXPERIMENT_NAME}.model")

@@ -5,39 +5,3 @@ model_100k_300_10_10_1:
   epochs: 10
   min_count: 1
 
-model_1kk_300_10_10_1:
-  corpus_size: 1000000
-  embedding_size: 300
-  context_window: 10
-  epochs: 10
-  min_count: 1
-
-model_100k_300_4_25_1:
-  corpus_size: 100000
-  embedding_size: 300
-  context_window: 4
-  epochs: 25
-  min_count: 1
-
-
-model_10k_300_4_25_1:
-  corpus_size: 10000
-  embedding_size: 300
-  context_window: 4
-  epochs: 25
-  min_count: 1
-
-
-model_10k_300_4_100_1:
-  corpus_size: 10000
-  embedding_size: 300
-  context_window: 4
-  epochs: 100
-  min_count: 1
-
-model_10k_300_8_150_1:
-  corpus_size: 10000
-  embedding_size: 300
-  context_window: 8
-  epochs: 150
-  min_count: 1

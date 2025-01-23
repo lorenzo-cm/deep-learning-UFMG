@@ -31,6 +31,7 @@ model = Word2Vec(
     workers=4,
     compute_loss=True,
     callbacks=[TQDMProgress(config['epochs'])],
+    sg=1
 )
 
 os.makedirs('models', exist_ok=True)

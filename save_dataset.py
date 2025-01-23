@@ -1,3 +1,3 @@
 from dataset import build_corpus
 
-corpus = build_corpus(100000, save=True)
+corpus = build_corpus(10000, save=True)

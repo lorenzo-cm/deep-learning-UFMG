@@ -3,7 +3,6 @@ from tqdm import tqdm
 from nltk.tokenize import RegexpTokenizer
 from datasets import load_dataset
 from nltk.stem import PorterStemmer
-import torch
 import random
 import pickle
 import os
@@ -47,8 +46,6 @@ def build_corpus(size,
             
         return return_dict
         
-    
-    torch.manual_seed(seed)
     random.seed(seed)
     ds = load_dataset("wikimedia/wikipedia", "20231101.en",split='train',streaming=False)
     rng = np.random.default_rng(seed=seed)

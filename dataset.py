@@ -68,7 +68,7 @@ def build_corpus(size,
             word_to_idx[word] = word_to_idx.get(word,len(word_to_idx))
             word_counts[word] = word_counts.get(word,0)+1
             line.append(word_to_idx[word])
-        corpus.append(torch.tensor(line,dtype=torch.long))
+        corpus.append(line)
     idx_to_word = {v:k for k,v in word_to_idx.items()}
     
     if save:

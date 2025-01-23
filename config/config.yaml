@@ -11,3 +11,10 @@ model_1kk_300_10_10_1:
   context_window: 10
   epochs: 10
   min_count: 1
+
+model_100k_300_4_25_1:
+  corpus_size: 100000
+  embedding_size: 300
+  context_window: 4
+  epochs: 25
+  min_count: 1

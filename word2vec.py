@@ -19,7 +19,7 @@ with open(config_yaml_path, 'r') as file:
     config = all_config[EXPERIMENT_NAME]
     print("Configuration:", config)
 
-corpus = build_corpus(config["corpus_size"])
+corpus = build_corpus(config["corpus_size"], load=True)['corpus']
 
 model = Word2Vec(
     sentences=corpus,

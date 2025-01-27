@@ -7,7 +7,8 @@ import random
 import pickle
 import os
 
-def save_corpus(corpus, word_to_idx, idx_to_word, word_count, filepath="corpus.pkl"):
+def save_corpus(size_corpus, corpus, word_to_idx, idx_to_word, word_count,):
+    filepath = f'corpus/{size_corpus}-corpus.pkl'
     with open(filepath, "wb") as f:
         pickle.dump({
             "corpus": corpus,
@@ -16,7 +17,8 @@ def save_corpus(corpus, word_to_idx, idx_to_word, word_count, filepath="corpus.p
             "word_count": word_count,
         }, f)
 
-def load_corpus(filepath="corpus.pkl"):
+def load_corpus(size_corpus):
+    filepath = f'corpus/{size_corpus}-corpus.pkl'
     with open(filepath, "rb") as f:
         data = pickle.load(f)
     return data["corpus"], data["word_to_idx"], data["idx_to_word"], data['word_count']
@@ -29,7 +31,7 @@ def build_corpus(size,
                  seed=42):
     
     if os.path.exists(pickle_file) and load and not save:
-        corpus, word2idx, idx2word, word_count = load_corpus()
+        corpus, word2idx, idx2word, word_count = load_corpus(size)
         
         return_dict = {}
         if 'corpus' in return_fields:
@@ -69,6 +71,6 @@ def build_corpus(size,
     idx_to_word = {v:k for k,v in word_to_idx.items()}
     
     if save:
-        save_corpus(corpus, word_to_idx, idx_to_word, word_counts)
+        save_corpus(size, corpus, word_to_idx, idx_to_word, word_counts)
     
     return corpus

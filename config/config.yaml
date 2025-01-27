@@ -5,3 +5,16 @@ model_100k_300_10_10_1:
   epochs: 10
   min_count: 1
 
+model_25k_300_10_10_1:
+  corpus_size: 25000
+  embedding_size: 300
+  context_window: 10
+  epochs: 10
+  min_count: 1
+
+model_25k_300_8_10_1:
+  corpus_size: 25000
+  embedding_size: 300
+  context_window: 8
+  epochs: 10
+  min_count: 1

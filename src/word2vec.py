@@ -4,7 +4,7 @@ import yaml
 from gensim.models import Word2Vec
 
 from config.tqdm_config import TQDMProgress
-from dataset import build_corpus
+from src.dataset import build_corpus
 
 EXPERIMENT_NAME = sys.argv[1]
 
@@ -34,5 +34,5 @@ model = Word2Vec(
     sg=1
 )
 
-os.makedirs('models', exist_ok=True)
-model.save(f"models/{EXPERIMENT_NAME}.model")
+os.makedirs('data/gensim_results/models/', exist_ok=True)
+model.save(f"data/gensim_results/models/{EXPERIMENT_NAME}.model")

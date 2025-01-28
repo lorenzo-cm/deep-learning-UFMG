@@ -7,8 +7,11 @@ import random
 import pickle
 import os
 
+PICKLE_FILEPATH = 'data/corpus/{size_corpus}-corpus.pkl'
+
 def save_corpus(size_corpus, corpus, word_to_idx, idx_to_word, word_count,):
-    filepath = f'corpus/{size_corpus}-corpus.pkl'
+    os.makedirs('data/corpus/', exist_ok=True)
+    filepath = PICKLE_FILEPATH.format(size_corpus=size_corpus)
     with open(filepath, "wb") as f:
         pickle.dump({
             "corpus": corpus,
@@ -18,7 +21,7 @@ def save_corpus(size_corpus, corpus, word_to_idx, idx_to_word, word_count,):
         }, f)
 
 def load_corpus(size_corpus):
-    filepath = f'corpus/{size_corpus}-corpus.pkl'
+    filepath = PICKLE_FILEPATH.format(size_corpus=size_corpus)
     with open(filepath, "rb") as f:
         data = pickle.load(f)
     return data["corpus"], data["word_to_idx"], data["idx_to_word"], data['word_count']
@@ -29,7 +32,7 @@ def build_corpus(size,
                  save=False, 
                  seed=42):
     
-    pickle_file = f'corpus/{size}-corpus.pkl'
+    pickle_file = PICKLE_FILEPATH.format(size_corpus=size)
     if os.path.exists(pickle_file) and load and not save:
         print('-'*40)
         print('LOADING corpus')

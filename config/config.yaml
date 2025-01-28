@@ -18,3 +18,19 @@ model_25k_300_8_10_1:
   context_window: 8
   epochs: 10
   min_count: 1
+
+
+model_50k_300_8_10_1:
+  corpus_size: 50000
+  embedding_size: 300
+  context_window: 8
+  epochs: 10
+  min_count: 1
+
+
+model_25k_300_8_30_1:
+  corpus_size: 25000
+  embedding_size: 300
+  context_window: 6
+  epochs: 30
+  min_count: 1

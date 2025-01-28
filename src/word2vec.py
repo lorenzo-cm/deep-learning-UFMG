@@ -34,5 +34,5 @@ model = Word2Vec(
     sg=1
 )
 
-os.makedirs('data/gensim_results/models/', exist_ok=True)
-model.save(f"data/gensim_results/models/{EXPERIMENT_NAME}.model")
+os.makedirs('data/gensim/models/', exist_ok=True)
+model.save(f"data/gensim/models/{EXPERIMENT_NAME}.model")

@@ -3,7 +3,7 @@ import os
 import yaml
 from gensim.models import Word2Vec
 
-from config.tqdm_config import TQDMProgress
+from src.config.tqdm_config import TQDMProgress
 from src.dataset import build_corpus
 
 EXPERIMENT_NAME = sys.argv[1]
@@ -13,7 +13,7 @@ if len(sys.argv) != 2:
     print(f"You can specify the config and config name in config/config.yaml")
     sys.exit(-1)
 
-config_yaml_path = f'config/config.yaml'
+config_yaml_path = f'src/config/config.yaml'
 
 with open(config_yaml_path, 'r') as file:
     all_config = yaml.safe_load(file)

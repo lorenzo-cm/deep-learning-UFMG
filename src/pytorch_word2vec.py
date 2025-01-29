@@ -6,9 +6,10 @@ import pickle
 class neg_skipgram(nn.Module):
     def __init__(self,
                  vocab_size,
-                 embedding_dimension=100,
+                 w2idx_path,
+                 embedding_dimension=300,
                  regularization=0.01,
-                 w2idx_path='data/pytorch_model/default/w2idx.pkl'):
+                 ):
         
         super(neg_skipgram,self).__init__()
         self.embeddings=nn.Embedding(vocab_size, embedding_dimension)
@@ -54,4 +55,7 @@ class neg_skipgram(nn.Module):
         idx2word = {idx: word for word, idx in self.w2idx.items()}
         top_n_words = [(idx2word[idx.item()], similarities[idx].item()) for idx in top_n_indices]
 
-        return top_n_words
+        return top_n_words[1:]
+
+    def __contains__(self, word):
+        return word in self.w2idx
